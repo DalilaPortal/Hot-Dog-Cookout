@@ -1,0 +1,20 @@
+import math
+
+people = int(input("How many people are attending: "))
+num_hotdog = int(input("How many hot dogs will each person be attending: "))
+
+# calculating the number of hot dog and bun packages needed
+total_hotdog = people * num_hotdog
+package_bun = 8
+total_bun = math.ceil(total_hotdog / package_bun)
+package_hotdog = 10
+total_num_hotdog = math.ceil(total_hotdog / package_hotdog)
+
+# calculating the number of reminding hot dogs and buns
+remainder_num_hotdog = package_hotdog * total_num_hotdog - total_hotdog
+remainder_bun = package_bun * total_bun - total_hotdog
+
+print("The minimum number of packages of hot dogs required: ", total_num_hotdog)
+print("The minimum number of packages of hot dogs buns required: ", total_bun)
+print("The number of hot dogs that will be left over: ", remainder_num_hotdog)
+print("The number of hot dog buns that will be left over: ", remainder_bun)
